@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 /*global systemDictionary:true */
 "use strict";
 
@@ -14,28 +15,28 @@ systemDictionary = {
 		"pl": "Ustawienia adaptera dla stockmarket",
 		"zh-cn": "stockmarket的适配器设置"
 	},
-	"option1": {
-		"en": "option1",
-		"de": "Option 1",
-		"ru": "Опция 1",
-		"pt": "Opção 1",
-		"nl": "Optie 1",
-		"fr": "Option 1",
-		"it": "opzione 1",
-		"es": "Opción 1",
-		"pl": "opcja 1",
-		"zh-cn": "选项1"
+	"ownStocks": {
+		"en": "Your favorite stocks",
+		"de": "Deine gewünschten Aktien",
 	},
-	"option2": {
-		"en": "option2",
-		"de": "Option 2",
-		"ru": "option2",
-		"pt": "opção 2",
-		"nl": "Optie 2",
-		"fr": "Option 2",
-		"it": "opzione 2",
-		"es": "opcion 2",
-		"pl": "Opcja 2",
-		"zh-cn": "选项2"
+	"ownStocks_label": {
+		"en": "Stockids (comma separated)",
+		"de": "Aktiennummer (mit Komma trennen)",
+	},
+	"ownStocks_info": {
+		"en": "Enter your own commands, which you entered in the GetAdmin software in column Command. No spaces please. Separate multiple values with comma.<br>Leave this field empty, if you have not (yet) defined any commands.",
+		"de": "Hier die Commands eintragen, die du in der GetAdmin-Software in der Spalte Commands definiert hast. Bitte ohne Leerzeichen. Mehrere Werte mit Komma trennen.<br>Falls du (noch) keine eigenen Commands definiert hast, lässt du das einfach leer.",
+	},
+	"apikey": {
+		"en": "Your API Key",
+		"de": "Dein API Key",
+	},
+	"apikey_label": {
+		"en": "Insert your API Key",
+		"de": "API Key hier eintragen",
+	},
+	"apikey_info": {
+		"en": "Please check <a href=\"https://www.alphavantage.co/support/#api-key\">https://www.alphavantage.co/support/#api-key</a>, to get your own API Key",
+		"de": "Bitte besorge dir deinen eigenen API Key unter der folgenden Adresse: <a href=\"https://www.alphavantage.co/support/#api-key\">https://www.alphavantage.co/support/#api-key</a>",
 	}
 };
