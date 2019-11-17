@@ -12,71 +12,15 @@
 
 ## stockmarket adapter for ioBroker
 
-Integrates the stock market in ioBroker
+This ioBroker Adapter integrates the stock market in ioBroker. You can choose which stock you want to watch.
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
+### Configuration
+1. Get your own API Key from https://www.alphavantage.co/support/#api-key
+2. Put your generated Key in the adapter config 
+3. Insert your desired Stockssymbols in the adapter config (comma seperated)
+3. Save the settings
 
-### Getting started
-
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.stockmarket`
-1. Initialize the current folder as a new git repository:  
-	```bash
-	git init
-	git add .
-	git commit -m "Initial commit"
-	```
-1. Link your local repository with the one on GitHub:  
-	```bash
-	git remote add origin https://github.com/waoler/ioBroker.stockmarket
-	```
-
-1. Push all files to the GitHub repo:  
-	```bash
-	git push origin master
-	```
-1. Head over to [main.js](main.js) and start programming!
-
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description                                              |
-|-------------|----------------------------------------------------------|
-| `test:js`   | Executes the tests you defined in `*.test.js` files.     |
-| `test:package`    | Ensures your `package.json` and `io-package.json` are valid. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `coverage` | Generates code coverage using your test files. |
-
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-See the documentation of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-	```bash
-	npm pack
-	```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-	```bash
-	cd /opt/iobroker
-	npm i /path/to/tarball.tgz
-	```
-
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.stockmarket`)
-1. Execute `iobroker upload stockmarket` on the ioBroker host
+You can change the schedule settings if you like (default every 15 minutes).
 
 ## Changelog
 
@@ -86,7 +30,7 @@ For later updates, the above procedure is not necessary. Just do the following:
 ## License
 MIT License
 
-Copyright (c) 2019 waoler <jonashabelmann@gmail.com>
+Copyright (c) 2019 waoler <waoler@web.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
