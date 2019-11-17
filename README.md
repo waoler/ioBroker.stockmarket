@@ -10,7 +10,7 @@
 
 **Tests:**: [![Travis-CI](http://img.shields.io/travis/waoler/ioBroker.stockmarket/master.svg)](https://travis-ci.org/waoler/ioBroker.stockmarket)
 
-## stockmarket adapter for ioBroker
+## Stockmarket adapter for ioBroker
 
 This ioBroker Adapter integrates the stock market in ioBroker. You can choose which stock you want to watch.
 

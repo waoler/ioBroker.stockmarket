@@ -18,9 +18,7 @@
     "url": "https://github.com/waoler/ioBroker.stockmarket"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3",
-    "alphavantage": "^2.0.0",
-    "jshint": "^2.10.3"
+    "@iobroker/adapter-core": "^1.0.3"
   },
   "devDependencies": {
     "@iobroker/testing": "^1.3.0",
