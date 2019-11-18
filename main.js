@@ -33,6 +33,7 @@ class Stockmarket extends utils.Adapter {
 		const apikey = this.config.apiKey;
 		if(apikey == "" || apikey == "string") {
 			this.log.error("No API Key set. Please edit your adapter settings and restart this adapter!");
+			this.disable();
 			return;
 		}
 
@@ -50,10 +51,10 @@ class Stockmarket extends utils.Adapter {
 				const data = [];
 				resp.on("data", d => data.push(d));
 				resp.on("end", () => {
-					let jsonstrong = JSON.parse(data.join(""));
+					const jsonstrong = JSON.parse(data.join(""));
 	
-					for (let i in jsonstrong["Time Series (5min)"]) {
-						for (let e in jsonstrong["Time Series (5min)"][i]) {
+					for (const i in jsonstrong["Time Series (5min)"]) {
+						for (const e in jsonstrong["Time Series (5min)"][i]) {
 							const stateName = stock + "." + e.replace(". ", "");
 							let unit = "USD";
 							if(e.replace(". ", "") == "5volume") { unit = ""; }
@@ -79,6 +80,8 @@ class Stockmarket extends utils.Adapter {
 	
 			}).on("error", (err) => {
 				this.log.error("Error: " + err.message);
+				this.disable();
+				return;
 			});
 		});
 	}
