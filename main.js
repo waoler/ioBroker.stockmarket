@@ -46,15 +46,28 @@ class Stockmarket extends utils.Adapter {
 			stock = stock.replace(" ", "");
 			const url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" + stock + "&interval=5min&apikey=" + apikey;
 			this.log.info("checking stock for: " + stock + " with URL: " + url);
-
+			
 			https.get(url, (resp) => {
 				const data = [];
 				resp.on("data", d => data.push(d));
 				resp.on("end", () => {
-					const jsonstrong = JSON.parse(data.join(""));
-	
-					for (const i in jsonstrong["Time Series (5min)"]) {
-						for (const e in jsonstrong["Time Series (5min)"][i]) {
+					let jsonstring;
+					try {
+						jsonstring = JSON.parse(data.join(""));
+					} catch (err) {
+						this.log.error("Parsing JSON Error: " + err.message);
+						this.disable();
+						return;		
+					}
+				
+					if(Object.prototype.hasOwnProperty.call(jsonstring, "Time Series (5min)")) {
+						this.log.error("JSON Object is wrong");
+						this.disable();
+						return;	
+					}
+
+					for (const i in jsonstring["Time Series (5min)"]) {
+						for (const e in jsonstring["Time Series (5min)"][i]) {
 							const stateName = stock + "." + e.replace(". ", "");
 							let unit = "USD";
 							if(e.replace(". ", "") == "5volume") { unit = ""; }
@@ -72,7 +85,7 @@ class Stockmarket extends utils.Adapter {
 								native: {}
 							});
 
-							this.setState(stateName, jsonstrong["Time Series (5min)"][i][e]);
+							this.setState(stateName, jsonstring["Time Series (5min)"][i][e]);
 						}
 						break;
 					}					
