@@ -33,7 +33,7 @@ class Stockmarket extends utils.Adapter {
 		const apikey = this.config.apiKey;
 		if(apikey == "" || apikey == "string") {
 			this.log.error("No API Key set. Please edit your adapter settings and restart this adapter!");
-			this.disable();
+			this.terminate("No Api Key");
 			return;
 		}
 
@@ -56,13 +56,13 @@ class Stockmarket extends utils.Adapter {
 						jsonstring = JSON.parse(data.join(""));
 					} catch (err) {
 						this.log.error("Parsing JSON Error: " + err.message);
-						this.disable();
+						this.terminate("Parsing JSON Error");
 						return;		
 					}
 				
 					if(Object.prototype.hasOwnProperty.call(jsonstring, "Time Series (5min)")) {
 						this.log.error("JSON Object is wrong");
-						this.disable();
+						this.terminate("JSON Object is wrong");
 						return;	
 					}
 
@@ -93,7 +93,7 @@ class Stockmarket extends utils.Adapter {
 	
 			}).on("error", (err) => {
 				this.log.error("Error: " + err.message);
-				this.disable();
+				this.terminate("HTTP Request Error");
 				return;
 			});
 		});
