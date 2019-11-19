@@ -60,13 +60,14 @@ class Stockmarket extends utils.Adapter {
 						return;		
 					}
 				
-					if(Object.prototype.hasOwnProperty.call(jsonstring, "Time Series (5min)")) {
+					if(!("Time Series (5min)" in jsonstring)) {
 						this.log.error("JSON Object is wrong");
 						this.terminate("JSON Object is wrong");
 						return;	
 					}
-
+					
 					for (const i in jsonstring["Time Series (5min)"]) {
+						//("2019-11-18 16:00:00" in jsonstring["Time Series (5min)"]) ? this.log.info("Super") : this.log.info("Nein");
 						for (const e in jsonstring["Time Series (5min)"][i]) {
 							const stateName = stock + "." + e.replace(". ", "");
 							let unit = "USD";

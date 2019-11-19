@@ -27,6 +27,10 @@ You can change the schedule settings if you like (default every 15 minutes).
 
 ## Changelog
 
+### 0.0.2
+* (waoler) fixed error handling
+* (waoler) fixed "instance already running "-Error
+
 ### 0.0.1
 * (waoler) initial release
 
