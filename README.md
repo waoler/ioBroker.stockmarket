@@ -17,8 +17,11 @@ This ioBroker Adapter integrates the stock market in ioBroker. You can choose wh
 ### Configuration
 1. Get your own API Key from https://www.alphavantage.co/support/#api-key
 2. Put your generated Key in the adapter config 
-3. Insert your desired Stockssymbols in the adapter config (comma seperated)
-3. Save the settings
+3. Insert your desired stockssymbols in the adapter config (comma seperated)
+4. (optional) To find the desired stocksymbols you can check them with the following URL: https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=STOCKNAME&apikey=YOUR_API_KEY
+Replace STOCKNAME with the Stock you searching for and YOUR_API_KEY with your Api Key :)
+Then use find your stock an use the shown SYMBOL for your adapter config.
+5. Save the settings
 
 You can change the schedule settings if you like (default every 15 minutes).
 
