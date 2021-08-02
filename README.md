@@ -37,7 +37,7 @@ You can change the schedule settings if you like (default every 15 minutes).
 ## License
 MIT License
 
-Copyright (c) 2019 waoler <waoler@web.de>
+Copyright (c) 2019-2021 waoler <waoler@web.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
