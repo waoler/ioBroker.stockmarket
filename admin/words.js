@@ -24,8 +24,8 @@ systemDictionary = {
 		"de": "Aktiennummer (mit Komma trennen)",
 	},
 	"ownStocks_info": {
-		"en": "Enter your own commands, which you entered in the GetAdmin software in column Command. No spaces please. Separate multiple values with comma.<br>Leave this field empty, if you have not (yet) defined any commands.",
-		"de": "Hier die Commands eintragen, die du in der GetAdmin-Software in der Spalte Commands definiert hast. Bitte ohne Leerzeichen. Mehrere Werte mit Komma trennen.<br>Falls du (noch) keine eigenen Commands definiert hast, lässt du das einfach leer.",
+		"en": "Enter your stock ids here. No spaces please. Separate multiple values with comma.<br> You can find your stock ids with this URL:<br><a href=\"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=STOCKNAME&apikey=YOUR_API_KEY\">https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=STOCKNAME&apikey=YOUR_API_KEY</a>",
+		"de": "Hier die Aktiennummer eintragen. Bitte ohne Leerzeichen. Mehrere Werte mit Komma trennen.<br> Einge Suche der Aktiennummer ist über die folgende URL möglich:<br><a href=\"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=STOCKNAME&apikey=YOUR_API_KEY\">https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=STOCKNAME&apikey=YOUR_API_KEY</a>",
 	},
 	"apikey": {
 		"en": "Your API Key",
@@ -37,6 +37,6 @@ systemDictionary = {
 	},
 	"apikey_info": {
 		"en": "Please check <a href=\"https://www.alphavantage.co/support/#api-key\">https://www.alphavantage.co/support/#api-key</a>, to get your own API Key",
-		"de": "Bitte besorge dir deinen eigenen API Key unter der folgenden Adresse: <a href=\"https://www.alphavantage.co/support/#api-key\">https://www.alphavantage.co/support/#api-key</a>",
+		"de": "Bitte registriere deinen eigenen API Key unter der folgenden Adresse: <a href=\"https://www.alphavantage.co/support/#api-key\">https://www.alphavantage.co/support/#api-key</a>",
 	}
 };
