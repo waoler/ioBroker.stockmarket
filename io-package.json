@@ -56,16 +56,18 @@
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
 		"main": "main.js",
-		"icon": "stockmarket.png",
+		"icon": "https://raw.githubusercontent.com/waoler/ioBroker.stockmarket/master/admin/stockmarket.png",
 		"enabled": true,
 		"extIcon": "https://raw.githubusercontent.com/waoler/ioBroker.stockmarket/master/admin/stockmarket.png",
 		"readme": "https://github.com/waoler/ioBroker.stockmarket/blob/master/README.md",
 		"loglevel": "info",
 		"mode": "schedule",
-        "schedule": "*/15 * * * *",
+        	"schedule": "*/15 * * * *",
 		"type": "misc-data",
 		"compact": true,
 		"materialize": true,
+		"connectionType": 'cloud',
+		"dataSource": 'poll'.
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"
