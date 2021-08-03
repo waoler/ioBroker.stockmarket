@@ -1,9 +1,5 @@
 "use strict";
 
-/*
- * Created with @iobroker/create-adapter v1.17.0
- */
-
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
@@ -28,7 +24,7 @@ class Stockmarket extends utils.Adapter {
 	}
 
 	async onReady() {
-		this.log.info("initialize stock market adapter"); 
+		this.log.debug("initialize stock market adapter"); 
 
 		const apikey = this.config.apiKey;
 		if(apikey == "" || apikey == "string") {
@@ -37,7 +33,7 @@ class Stockmarket extends utils.Adapter {
 			return;
 		}
 
-		this.log.info("APIKEY is set: '" + this.config.apiKey + "'");
+		this.log.debug("APIKEY is set: '" + this.config.apiKey + "'");
 
 		this.log.info("stocks to check: " + this.config.ownStocks);
 		const stocks = this.config.ownStocks.split(",");
@@ -46,6 +42,26 @@ class Stockmarket extends utils.Adapter {
 			stock = stock.replace(" ", "");
 			const url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" + stock + "&interval=5min&apikey=" + apikey;
 			this.log.info("checking stock for: " + stock + " with URL: " + url);
+			
+			const unitUrl = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=" + stock + "&apikey=" + apikey;
+			this.log.debug("getting stock unit for " + stock + " with URL " + unitUrl); 
+			
+			https.get(url, (resp) => {
+				const data = [];
+				resp.on("data", d => data.push(d));
+				resp.on("end", () => {
+					let jsonstring;
+					try {
+						jsonstring = JSON.parse(data.join(""));
+					} catch (err) {
+						this.log.error("Parsing JSON Error: " + err.message);
+						this.terminate("Parsing JSON Error");
+						return;		
+					}
+				this.log.debug(jsonstring);
+				let unit = jsonstring.Currency;	
+				this.log.debug(unit);
+			}
 			
 			https.get(url, (resp) => {
 				const data = [];
@@ -106,7 +122,7 @@ class Stockmarket extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			this.log.info("cleaned everything up...");
+			this.log.debug("cleaned everything up...");
 			callback();
 		} catch (e) {
 			callback();
