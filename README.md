@@ -27,6 +27,11 @@ You can change the schedule settings if you like (default every 15 minutes).
 
 ## Changelog
 
+### 0.0.3
+* (thost96) fixed issues found by adapterchecker (see #4)
+* (thost96) added nodejs 14 and 16 to tests (see #17)
+* (thost96) added github actions for test and lint
+
 ### 0.0.2
 * (waoler) fixed error handling
 * (waoler) fixed "instance already running "-Error
