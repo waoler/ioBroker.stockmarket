@@ -1,11 +1,31 @@
 {
 	"common": {
 		"name": "stockmarket",
-		"version": "0.0.2",
+		"version": "0.0.3",
 		"news": {
+			"0.0.3": {
+			    	"en": "multiple issue fixes ",
+			    	"de": "mehrere Problembehebungen",
+		    		"ru": "несколько исправлений проблем",
+			    	"pt": "várias correções de problemas",
+			    	"nl": "meerdere probleemoplossingen",
+			    	"fr": "plusieurs corrections de problèmes",
+			    	"it": "più correzioni di problemi",
+			    	"es": "múltiples correcciones de problemas",
+			    	"pl": "poprawki wielu problemów",
+			    	"zh-cn": "多个问题修复"
+			  	}
 			"0.0.2": {
 				"en": "Fix error handling",
-				"de": "Fehlerbehandlung verbessert"
+				"de": "Fehlerbehandlung verbessert",
+				"ru": "Исправить обработку ошибок",
+    				"pt": "Corrigir tratamento de erros",
+    				"nl": "Foutafhandeling oplossen",
+    				"fr": "Correction de la gestion des erreurs",
+    				"it": "Correggi la gestione degli errori",
+    				"es": "Corregir el manejo de errores",
+    				"pl": "Napraw obsługę błędów",
+    				"zh-cn": "修复错误处理"
 			},
 			"0.0.1": {
 				"en": "initial release",
@@ -56,7 +76,7 @@
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
 		"main": "main.js",
-		"icon": "https://raw.githubusercontent.com/waoler/ioBroker.stockmarket/master/admin/stockmarket.png",
+		"icon": "stockmarket.png",
 		"enabled": true,
 		"extIcon": "https://raw.githubusercontent.com/waoler/ioBroker.stockmarket/master/admin/stockmarket.png",
 		"readme": "https://github.com/waoler/ioBroker.stockmarket/blob/master/README.md",
@@ -66,8 +86,6 @@
 		"type": "misc-data",
 		"compact": true,
 		"materialize": true,
-		"connectionType": 'cloud',
-		"dataSource": 'poll'.
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"
