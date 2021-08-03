@@ -14,7 +14,7 @@
 			    	"es": "múltiples correcciones de problemas",
 			    	"pl": "poprawki wielu problemów",
 			    	"zh-cn": "多个问题修复"
-			  	}
+			},
 			"0.0.2": {
 				"en": "Fix error handling",
 				"de": "Fehlerbehandlung verbessert",
